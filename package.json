@@ -9,14 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "ethers": "^5.4.7",
+    "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "web3modal": "^1.9.12"
   },
   "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "@ethersproject/abi": "^5.4.7",
+    "@ethersproject/providers": "^5.4.7",
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.0.0",
+    "@nomiclabs/hardhat-etherscan": "^3.0.0",
+    "@typechain/ethers-v5": "^10.1.0",
+    "@typechain/hardhat": "^6.1.2",
+    "chai": "^4.2.0",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5"
+    "eslint-config-next": "14.2.5",
+    "hardhat": "^2.11.1",
+    "hardhat-gas-reporter": "^1.0.8",
+    "postcss": "^8",
+    "solidity-coverage": "^0.8.0",
+    "tailwindcss": "^3.4.1",
+    "typechain": "^8.1.0"
   }
 }
