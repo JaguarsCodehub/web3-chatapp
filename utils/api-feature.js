@@ -34,15 +34,13 @@ export const connectWallet = async () => {
 };
 
 const fetchContract = (signerOrProvider) =>
-  new ethers.Contract(ChatAppABI, ChatAppAddress, signerOrProvider);
+  new ethers.Contract(ChatAppAddress, ChatAppABI, signerOrProvider);
 
 export const connectingWithContract = async () => {
   try {
     const web3modal = new Web3Modal();
     const connection = await web3modal.connect();
-
-    const provider = new ethers.BrowserProvider(connection);
-
+    const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
     const contract = fetchContract(signer);
 
