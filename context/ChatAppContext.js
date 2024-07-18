@@ -148,6 +148,7 @@ export const ChatAppProvider = ({ children }) => {
         error,
         currentUserName,
         currentUserAddress,
+        connectWallet
       }}
     >
       {children}
