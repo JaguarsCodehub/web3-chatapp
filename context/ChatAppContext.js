@@ -43,9 +43,9 @@ export const ChatAppProvider = ({ children }) => {
       const friendLists = await contract.getMyFriendList();
       setFriendLists(friendLists);
 
+      setUserLists(userList);
       // Get all App user List
       const userList = await contract.getAllAppUser();
-      setUserLists(userList);
     } catch (error) {
       setError('Please install and connect your wallet');
     }

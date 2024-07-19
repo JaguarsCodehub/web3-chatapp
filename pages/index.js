@@ -3,6 +3,9 @@ import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import { ChatAppContext } from '@/context/ChatAppContext';
 
+import Filter from '@/components/filter';
+import Friend from '@/components/friend';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
@@ -12,8 +15,8 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
-      <h1>Web3 CHat APP DEMO</h1>
-      <p>{title}</p>
+      <Filter />
+      <Friend />
     </main>
   );
 }

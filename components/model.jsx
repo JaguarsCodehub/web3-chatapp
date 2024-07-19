@@ -6,13 +6,14 @@ import { ChatAppContext } from '@/context/ChatAppContext';
 import Loader from './loader';
 
 const Model = ({
-  openModel,
+  openBox,
   title,
   head,
   info,
   smallInfo,
   image,
   functionName,
+  address
 }) => {
   // useState
   const [name, setName] = useState('');
@@ -33,7 +34,41 @@ const Model = ({
           <p>{info}</p>
           <small>{smallInfo}</small>
 
-          <div></div>
+          {
+            loading == true ? (
+              <Loader />
+            ) : (
+              <div className='model_box_right_name'>
+                <div className='model_box_right_name_info'>
+                  <Image src={images.username} alt="user" width={30} height={30} />
+                  <input type='text' placeholder='Your Name' onChange={(e) => setName(e.target.value)} />
+                </div>
+                <div className='model_box_right_name_info'>
+                  <Image src={images.account} alt="user" width={30} height={30} />
+                  <input type='text' placeholder={address || "Account Address"} onChange={(e) => setAccountAddress(e.target.value)} />
+                </div>
+
+                <div className='model_box-right_name_btn'>
+                  <button onClick={() => functionName({ name, accountAddress })}>
+                    {""}
+                    <Image src={images.send} alt="send" width={30} height={30} />
+                    {""}
+                    Submit
+                  </button>
+                  <button onClick={() => openBox(false)}>
+                    {""}
+                    <Image src={images.close} alt="send" width={30} height={30} />
+                    {""}
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            )
+          }
+
+
+
+
         </div>
       </div>
     </div>
